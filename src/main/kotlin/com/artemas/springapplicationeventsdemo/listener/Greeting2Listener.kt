@@ -8,12 +8,12 @@ import org.springframework.scheduling.annotation.Async
 import org.springframework.stereotype.Component
 
 @Component
-class GreetingListener {
-    val logger: Logger = LoggerFactory.getLogger(GreetingListener::class.java)
-    
+class Greeting2Listener {
+    val logger: Logger = LoggerFactory.getLogger(Greeting3Listener::class.java)
+
     @EventListener
     @Async
     fun onGreetingEventCreated(greetingEvent: GreetingEvent) {
-        logger.info("GreetingListener: I received a greeting event! : $greetingEvent")
+        logger.info("Greeting2Listener: I received a greeting event! : $greetingEvent")
     }
 }
