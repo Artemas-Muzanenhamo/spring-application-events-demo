@@ -14,6 +14,6 @@ class Greeting3Listener {
     @EventListener
     @Async
     fun onGreetingEventCreated(greetingEvent: GreetingEvent) {
-        logger.info("Greeting3Listener: I received a greeting event! : $greetingEvent")
+        logger.info("Greeting3Listener: I received a greeting event! : ${greetingEvent.source}")
     }
 }

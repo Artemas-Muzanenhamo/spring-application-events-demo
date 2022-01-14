@@ -14,6 +14,11 @@ class GreetingListener {
     @EventListener
     @Async
     fun onGreetingEventCreated(greetingEvent: GreetingEvent) {
-        logger.info("GreetingListener: I received a greeting event! : $greetingEvent")
+        val source = greetingEvent.source ?: return sendErrorEvent(greetingEvent)
+        logger.info("GreetingListener: I received a greeting event! : $source")
+    }
+
+    private fun sendErrorEvent(greetingEvent: GreetingEvent) {
+        logger.error("GreetingListener FAILED with event : ${greetingEvent.source}")
     }
 }
